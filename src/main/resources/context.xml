@@ -13,59 +13,65 @@
 		value="yyyy-MM-dd" /> </bean> -->
 
 	<util:list id="broadMembers">
-	
+
 		<value>Jhon</value>
-		
+
 		<value>Rock</value>
-		
+
 		<value>Dhoni</value>
-		
+
 		<value>Yuvraj</value>
-		
+
 	</util:list>
-	
-	<util:properties id="properties" location="classpath:IPAddress.properties"></util:properties>
+
+	<util:properties id="properties"
+		location="classpath:IPAddress.properties"></util:properties>
 
 	<util:map id="branchManager">
-	
+
 		<entry key="Hyderabad" value="Shiva"></entry>
-		
+
 		<entry key="Chennai" value="Krishna"></entry>
-		
+
 		<entry key="Mumbai" value="Jaffer"></entry>
-		
+
 		<entry key="Bangalore" value="aakash-singh"></entry>
-		
+
 	</util:map>
 
 	<util:set id="City">
-	
+
 		<value>Hyderabad</value>
-		
+
 		<value>Mumbai</value>
-		
+
 		<value>Bangalore</value>
-		
+
 		<value>Chennai</value>
-		
+
 	</util:set>
-      
-	<bean id="organization" class="com.capgemini.app.bean.Organization">
+
+	<bean id="organization"
+		class="com.capgemini.app.bean.Organization">
 
 		<property name="boardMembers" ref="broadMembers"></property>
 
 		<property name="branchManagers" ref="branchManager"></property>
 
 		<property name="cities" ref="City"></property>
-	
+
 		<property name="listed" value="true"></property>
-		
+
 		<property name="dateOfEstablishment">
+
 			<bean class="java.time.LocalDate" factory-method="parse">
-			<constructor-arg value="1997-03-12"></constructor-arg>
+
+				<constructor-arg value="1997-03-12"></constructor-arg>
+
 			</bean>
+
 		</property>
-		
+
 		<property name="ipAddresses" ref="properties"></property>
 
 		<property name="name" value="Capgemini"></property>
