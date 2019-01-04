@@ -13,6 +13,6 @@ public class App
      
       ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
       Organization organization = (Organization) context.getBean("organization");
-      System.out.println(organization.getDateOfEstablishment());		
+      System.out.println(organization.toString());		
     }
 }

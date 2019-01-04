@@ -24,7 +24,7 @@
 		
 	</util:list>
 	
-	
+	<util:properties id="properties" location="classpath:IPAddress.properties"></util:properties>
 
 	<util:map id="branchManager">
 	
@@ -60,11 +60,13 @@
 	
 		<property name="listed" value="true"></property>
 		
-		<property name="dateOfEstablishment" >
-		<bean id="date" class="java.time.LocalDate"  factory-method="now"></bean>
+		<property name="dateOfEstablishment">
+			<bean class="java.time.LocalDate" factory-method="parse">
+			<constructor-arg value="1997-03-12"></constructor-arg>
+			</bean>
 		</property>
 		
-		<!-- <property name="ipAddresses" ref="properties"></property> -->
+		<property name="ipAddresses" ref="properties"></property>
 
 		<property name="name" value="Capgemini"></property>
 
